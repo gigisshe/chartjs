@@ -34,6 +34,25 @@
 
             }
         )
+        if (liff.isApiAvailable('shareTargetPicker')) {
+            liff.shareTargetPicker([
+                {
+                    type: "text",
+                    text: "Hello, World!"
+                }
+            ])
+                .then(
+                    console.log("ShareTargetPicker was launched")
+                ).catch(function (res) {
+                    console.log("Failed to launch ShareTargetPicker")
+                })
+        }
+
+        // Check if multiple liff transtion feature is available
+        if (liff.isApiAvailable('multipleLiffTransition')) {
+            window.location.href = "https://line.me/{liffId}" // URL for another LIFF app
+        }
+
     </script>
     <hr>
     <div id="wrapper_overflow">
