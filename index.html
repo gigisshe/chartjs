@@ -9,6 +9,33 @@
 </head>
 
 <body>
+    <div id="user_profile">
+        <!--ID、名字、頭貼網址、狀態-->
+        <p>userId: <span id="userId"></span></p>
+        <p>displayName: <span id="displayName"></span></p>
+        <p>pictureUrl: <span id="pictureUrl"></span></p>
+        <p>statusMessage: <span id="statusMessage"></span></p>
+    </div>
+    <!--引入SDK-->
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script>
+        //初始化LIFF
+        liff.init(
+            data => {
+                liff.getProfile().then(profile => {
+                    //拿取profile塞回上面的span
+                    document.getElementById('userId').innerHTML = profile.userId
+                    document.getElementById('displayName').innerHTML = profile.displayName
+                    document.getElementById('pictureUrl').innerHTML = profile.pictureUrl
+                    document.getElementById('statusMessage').innerHTML = profile.statusMessage
+                })
+            }, err => {
+                //LIFF initialization failed
+
+            }
+        )
+    </script>
+
     <div id="wrapper_overflow">
         <div id="first_plot">
             <canvas id="myChart" width="auto" height="auto" aria-label="Hello ARIA World" role="img">Your browser does
