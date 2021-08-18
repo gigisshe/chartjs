@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chartjs2</title>
+</head>
+
+<body>
+    <div>
+        <canvas id="myChart" width="300" height="100" aria-label="Hello ARIA World" role="img">Your browser does not
+            support the canvas element.</canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx1 = document.getElementById('myChart');
+        var myChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: [
+                    '2021-08-10',
+                    '2021-08-12',
+                    '2021-08-13',
+                    '2021-08-14',
+                    '2021-08-16',
+                    '2021-08-18',
+                ],
+                datasets: [{
+                    label: 'Weight (kg)',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [50, 60, 70, 75, 66, 68, 66],
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        //beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "您的體重趨勢",
+                        font: { size: 30 },
+                        color: 'rgb(57, 83, 192)',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                size: 20
+                            }
+                        }
+                    }
+                },
+                layout: {
+                    padding: 40
+                }
+            }
+
+        });
+    </script>
+    <hr>
+    <div>
+        <canvas id="myChart2" width="300" height="100" aria-label="Hello ARIA World2" role="img">Your browser does not
+            support the canvas element.</canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx2 = document.getElementById('myChart2');
+        var myChart2 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: [
+                    '2021-08-10',
+                    '2021-08-12',
+                    '2021-08-13',
+                    '2021-08-14',
+                    '2021-08-16',
+                    '2021-08-18',
+                ],
+                datasets: [{
+                    label: '卡路里 (kcal)',
+                    backgroundColor: 'rgb(226, 62, 40)',
+                    borderColor: 'rgb(226, 62, 40)',
+                    data: [2100, 2000, 1800, 2500, 3500, 2500, 2000],
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        //beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "每日攝取熱量",
+                        font: { size: 30 },
+                        color: 'rgb(57, 83, 192)',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                size: 20
+                            }
+                        }
+                    }
+                },
+                layout: {
+                    padding: 40
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>
