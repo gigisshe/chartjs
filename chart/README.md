@@ -1,3 +1,3 @@
-# chartjs
+# chart
 
-https://gigisshe.github.io/chartjs/
+https://gigisshe.github.io/what2eat/chart/
